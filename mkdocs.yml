@@ -121,5 +121,5 @@ nav:
 
   - 设置:
     - 扩展:
-        - setup/extensions/mkdocs-enumerate-headings-plugin.md
-        - setup/extensions/mkdocs-toggle-sidebar-plugin.md
+        - enumerate-headings-plugin: setup/extensions/mkdocs-enumerate-headings-plugin.md
+        - toggle-sidebar-plugin: setup/extensions/mkdocs-toggle-sidebar-plugin.md
