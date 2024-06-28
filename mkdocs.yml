@@ -4,8 +4,8 @@ site_author: Mingmin Yu
 site_description: >-
   MkDocs Material 中文文档
 
-repo_name: squidfunk/mkdocs-material
-repo_url: https://github.com/squidfunk/mkdocs-material
+repo_name: mingminyu/mkdocs-material
+repo_url: https://github.com/mingminyu/mkdocs-material
 
 copyright: Copyright &copy; 2024
 
@@ -20,7 +20,7 @@ theme:
     - content.tabs.link
     - content.footnote.tooltips
     - navigation.footer
-    # - navigation.sections
+
     - navigation.tabs
     - navigation.top
     - navigation.tracking
@@ -48,11 +48,16 @@ theme:
   favicon: assets/favicon.png
   icon:
     logo: logo
+  
+  language: zh
 
 plugins:
+  - tags
   - blog
   - search
-  - toggle-sidebar
+  # - toggle-sidebar
+  - tags:
+      enabled: true
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - enumerate-headings:
@@ -61,6 +66,8 @@ plugins:
       increment_across_pages: true
 
 extra:
+  version:
+    provider: mike
   status:
     new: Recently added
     deprecated: Deprecated
@@ -106,10 +113,17 @@ markdown_extensions:
   - pymdownx.snippets:
       auto_append:
         - includes/mkdocs.md
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
       combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
@@ -118,8 +132,10 @@ nav:
   - 入门: 
     - index.md
     - 新建网站: getting-started/create-your-site.md
+    - 发布网站: getting-started/public-your-site.md
 
   - 设置:
     - 扩展:
         - enumerate-headings-plugin: setup/extensions/mkdocs-enumerate-headings-plugin.md
         - toggle-sidebar-plugin: setup/extensions/mkdocs-toggle-sidebar-plugin.md
+  

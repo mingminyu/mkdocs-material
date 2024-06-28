@@ -29,6 +29,7 @@ mkdocs new .
 └─ mkdocs.yml
 ```
 
+
 ## 配置
 
 ### 最小配置
@@ -196,4 +197,3 @@ mkdocs build
 我们并不需要设置数据库或者服务器，因为 Material MkDocs 是自包含的，我们可以将其发布到 Github Pages 或者 Gitlab Pages 上。
 
 如果你打算将文档放在本地而不是 WEB 服务器上，可以阅读下 Material MkDocs 的离线使用。
-
