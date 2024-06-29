@@ -54,7 +54,6 @@ theme:
 plugins:
   - tags
   - blog
-  - search
   # - toggle-sidebar
   - tags:
       enabled: true
@@ -66,8 +65,6 @@ plugins:
       increment_across_pages: true
 
 extra:
-  version:
-    provider: mike
   status:
     new: Recently added
     deprecated: Deprecated
@@ -130,9 +127,10 @@ markdown_extensions:
 
 nav:
   - 入门: 
-    - index.md
+    - 安装: index.md
     - 新建网站: getting-started/create-your-site.md
     - 发布网站: getting-started/public-your-site.md
+    - 自定义: getting-started/customization.md
 
   - 设置:
     - 扩展:

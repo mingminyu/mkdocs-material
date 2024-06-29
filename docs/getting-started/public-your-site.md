@@ -12,6 +12,7 @@ tags:
 
 如果已经在 GitHub 上托管代码，那么使用 GitHub Pages 来发布网站那是再方便不过了。
 
+
 ### 使用 Github Actions
 
 使用 GitHub Actions 可以自动部署网站，我们需要在库的根目录下新建一个 GitHub Actions Workflow，例如 `.github/workflows/ci.yml`，并粘贴入以下内容：
@@ -67,7 +68,7 @@ tags:
             mkdocs-awesome-pages-plugin
         ```
 
-=== "内测版本"
+=== "内部版本"
 
     ```yaml linenums="1"
     name: ci
@@ -106,9 +107,90 @@ tags:
     ```
 
     1.  如果你想要使用 `optimize` 插件来自动压缩图片的话，那么这一步是必须的。
-    2.  在部署内测版本 Material MkDocs 时，记得在 【Github --> Security --> Secrets and variables】中设置 `GH_TOKEN` 环境变量。
+    2.  在部署内部版本 Material MkDocs 时，记得在 【Github --> Security --> Secrets and variables】中设置 `GH_TOKEN` 环境变量。
 
-现在，当新的更改被提交到 `master` 或者 `main` 分值后，静态网站将自动构建和部署，我们可以在仓库中的 Actions 查看具体 Workflow 运行情况和日志。
+现在，当新的更改被提交到 `master` 或者 `main` 分支后，静态网站将自动构建和部署，我们可以在仓库中的 Actions 查看具体 Workflow 运行情况和日志。
+
+### 使用 MkDocs
+
+如果你更喜欢手动部署项目，你可以在根目录下执行以下命令:
+
+```sh
+mkdocs gh-deploy --force
+```
+
+!!! warning "注意"
+    执行上述操作后 Github 会编译文档并将它部署到 `gh-pages` 分支上。查看 [MkDocs 总览](https://www.mkdocs.org/user-guide/deploying-your-docs/#project-pages) 来获取更多信息，如果想要查看命令行参数，可以查阅[命令行](https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy)文档。
+
 
 ## Github Pages :material-gitlab:
 
+如果你是将代码托管在 GitLab 上，那么也可以使用 GitLab CI 来部署 GitLab Pages。在仓库的根目录中，创建一个名为 `.gitlab-ci.yml` 文件，然后添加以下内容：
+
+=== "Material for MkDocs"
+
+    ```yaml linenums="1"
+    pages:
+      stage: deploy
+      image: python:latest
+      script:
+        - pip install mkdocs-material
+        - mkdocs build --site-dir public
+      artifacts:
+        paths:
+          - public
+      rules:
+        - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    ```
+
+=== "内部版本"
+
+    ```yaml linenums="1"
+    pages:
+      stage: deploy
+      image: python:latest
+      script: # (1)!
+        - pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
+        - mkdocs build --site-dir public
+      artifacts:
+        paths:
+          - public
+      rules:
+        - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    ```
+
+    1.  在部署内部记得设置好 `GH_TOKEN` 环境变量。
+
+现在，当新的更改被提交到 `master` 或者 `main` 分支后，静态网站将自动构建和部署，我们可以在仓库中的 Actions 查看具体 Workflow 运行情况和日志。
+
+我们的网站访问入口为 `<username>.gitlab.io/<repository>`。
+
+## 其他
+
+
+由于我们无法覆盖所有可能的平台，我们依赖社区贡献的指南来介绍如何将 Material for MkDocs 构建的网站部署到
+其他平台上：
+
+<div class="grid cards" markdown>
+
+- [:simple-azuredevops: Azure][Azure]
+- [:simple-cloudflarepages: Cloudflare Pages][Cloudflare Pages]
+- [:simple-digitalocean: DigitalOcean][DigitalOcean]
+- [:material-airballoon-outline: Fly.io][Flyio]
+- [:simple-netlify: Netlify][Netlify]
+- [:simple-vercel: Vercel][Vercel]
+- [:simple-codeberg: Codeberg Pages][Codeberg Pages]
+
+</div>
+
+  [GitLab Pages]: https://gitlab.com/pages
+  [GitLab CI]: https://docs.gitlab.com/ee/ci/
+  [masked custom variables]: https://docs.gitlab.com/ee/ci/variables/#create-a-custom-variable-in-the-ui
+  [default branch]: https://docs.gitlab.com/ee/user/project/repository/branches/default.html
+  [Azure]: https://bawmedical.co.uk/t/publishing-a-material-for-mkdocs-site-to-azure-with-automatic-branch-pr-preview-deployments/763
+  [Cloudflare Pages]: https://www.starfallprojects.co.uk/projects/deploy-host-docs/deploy-mkdocs-material-cloudflare/
+  [DigitalOcean]: https://www.starfallprojects.co.uk/projects/deploy-host-docs/deploy-mkdocs-material-digitalocean-app-platform/
+  [Flyio]: https://documentation.breadnet.co.uk/cloud/fly/mkdocs-on-fly/
+  [Netlify]: https://www.starfallprojects.co.uk/projects/deploy-host-docs/deploy-mkdocs-material-netlify/
+  [Vercel]: https://www.starfallprojects.co.uk/projects/deploy-host-docs/deploy-mkdocs-material-vercel/
+  [Codeberg Pages]: https://andre601.ch/blog/2023/11-05-using-codeberg-pages/

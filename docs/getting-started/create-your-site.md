@@ -22,7 +22,7 @@ mkdocs new .
 
 以上操作会新建以下结构的文件：
 
-``` { .sh .no-copy }
+```{ .sh .no-copy }
 .
 ├─ docs/
 │  └─ index.md
@@ -54,7 +54,7 @@ theme:
         1.  安装 `vscode-yaml` 插件来提供 YAML 语言支持
         2.  在工作区的 setting.json 文件中添加如下内容:
 
-            ``` json
+            ```json
             {
               "yaml.schemas": {
                 "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
@@ -82,7 +82,7 @@ theme:
             ```
 
 
-    [Schema JSON]: https://github.com/squidfunk/mkdocs-material/blob/master/docs/schema.json
+[Schema JSON]: https://github.com/squidfunk/mkdocs-material/blob/master/docs/schema.json
 
 ### 高级配置
 
@@ -157,13 +157,13 @@ mkdocs serve # (1)!
 
 === "Unix, Powershell"
 
-    ```
+    ```sh
     docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
     ```
 
 === "Windows"
 
-    ```
+    ```sh
     docker run --rm -it -p 8000:8000 -v "%cd%":/docs squidfunk/mkdocs-material
     ```
 
@@ -176,7 +176,7 @@ mkdocs serve # (1)!
 当文档编辑完成后，可以通过以下命令将所有的 Markdown 文件生成一个静态网站：
 
 
-```
+```sh
 mkdocs build
 ```
 
@@ -184,13 +184,13 @@ mkdocs build
 
 === "Unix, Powershell"
 
-    ```
+    ```sh
     docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material build
     ```
 
 === "Windows"
 
-    ```
+    ```sh
     docker run --rm -it -v "%cd%":/docs squidfunk/mkdocs-material build
     ```
 

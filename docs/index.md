@@ -30,13 +30,13 @@
 
 === "最新版"
 
-    ```
+    ```sh
     docker pull squidfunk/mkdocs-material
     ```
 
 === "9.x"
 
-    ```
+    ```sh
     docker pull squidfunk/mkdocs-material:9
     ```
 
@@ -47,7 +47,7 @@
 - [mkdocs-minify-plugin](https://github.com/byrnereese/mkdocs-minify-plugin)
 - [mkdocs-redirects](https://github.com/datarobot/mkdocs-redirects)
 
-??? 如何在 Docker 镜像中添加插件
+??? "如何在 Docker 镜像中添加插件"
 
     Material for MkDocs 捆绑了有用和常用的插件，同时尽量不扩大官方镜像的大小。如果没有包含要使用的插件，请创建一个新的 Dockerfile 并使用自定义安装例程扩展官方的Docker 映像:
 
@@ -55,24 +55,24 @@
 
         创建一个 `Dockerfile` 并在官方镜像上进行扩展:
 
-        ``` Dockerfile title="Dockerfile"
+        ```Dockerfile title="Dockerfile"
         FROM squidfunk/mkdocs-material
         RUN pip install mkdocs-macros-plugin
         RUN pip install mkdocs-glightbox
         ```
 
-    === "内测版本"
+    === "内部版本"
 
-        克隆 Material MkDocs 内测版本的仓库，并在根目录下创建一个名为 `user-requirements.txt` 文件。 接着添加需要安装的组件，例如:
+        克隆 Material MkDocs 内部版本的仓库，并在根目录下创建一个名为 `user-requirements.txt` 文件。 接着添加需要安装的组件，例如:
 
-        ``` txt title="user-requirements.txt"
+        ```txt title="user-requirements.txt"
         mkdocs-macros-plugin
         mkdocs-glightbox
         ```
     
     接下来，使用以下命令构建镜像:
 
-    ```
+    ```shell
     docker build -t squidfunk/mkdocs-material .
     ```
 
@@ -82,7 +82,7 @@
 
 克隆 GitHub 上 Material for MkDocs 仓库，如果是想使用最最新的版本，可以尝试此种方法:
 
-```
+```sh
 git clone https://github.com/squidfunk/mkdocs-material.git
 ```
 
