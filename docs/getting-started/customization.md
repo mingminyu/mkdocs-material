@@ -1,15 +1,5 @@
 # 自定义
 
-<head>
-    <style>
-        .github {
-            color: #EAFF4D
-        }
-    </style>
-</head>
-
-:fontawesome-brands-youtube:{ .github }
-
 使用 Material MkDocs 可以让基于 MkDocs 构建的网站变得更加漂亮。然而有时候，可能需要对主题做些许改动才能符合我们自己的需求。
 
 ## 添加资源文件
@@ -285,3 +275,63 @@ source venv/bin/activate
 
 接下来，安装 Python 依赖:
 
+=== "Material MkDocs"
+
+    ```sh
+    pip install -e ".[recommended]"
+    pip install nodeenv
+    ```
+
+=== "内部版本"
+
+    ```sh
+    pip install -e ".[recommended, imaging]"
+    pip install nodeenv
+    ```
+
+    此外, 如图片处理文档描述的那样，你还需安装 `cairo` 和 `pngquant` 库。
+
+最后，需要在 Python 虚拟环境中安装最新版本 [Node.js](https://nodejs.org) 以及依赖。
+
+```sh
+nodeenv -p -n lts
+npm install
+```
+
+### 开发模式
+
+执行以下命令，开启 watcher：
+
+```sh
+npm start
+```
+
+接下来，通过如下命令开启实施预览:
+
+```sh
+mkdocs serve --watch-theme
+```
+
+打开浏览器访问 http://localhost:8000 ，我们就可以看到文档内容了。
+
+!!! warning "自动生成文件"
+
+    不要对 `material` 目录做任何更改，因为当主题构建时，该目录下文件内容是从 `src` 目录自动生成的。
+
+### 构建主题
+
+完成更改后，通过调用如下命令来开始构建主题:
+
+```sh
+npm run build # (1)!
+```
+
+1. 该命令会编译主题的所有文件，在 Material MkDocs 自己的文档，会跳过 overrides 目录，因为它并不是随着主题发布的。如果你 Fork 了该主题，并且也想要构建 overrides 目录，例如在提交 PR 时，可以使用:
+
+    ```sh
+    npm run build:all
+    ```
+
+    因为构建图标搜索索引、视图文件、额外的 CSS 样式文件以及 JavaScripts 文件时，这一步将会耗时较长。
+
+这将触发所有样式的生产级编译，并缩小 CSS 和 JS 文件。当命令退出后，编译的文件将存放于 material 目录中。接下来，当运行`mkdocs-build` 命令时，应该就能看到我们对原始主题的更改。

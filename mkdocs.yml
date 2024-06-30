@@ -20,9 +20,9 @@ theme:
     - content.tabs.link
     - content.footnote.tooltips
     - navigation.footer
-
     - navigation.tabs
     - navigation.top
+    - navigation.indexes
     - navigation.tracking
     - search.highlight
     - search.share
@@ -35,15 +35,15 @@ theme:
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/brightness-4
-        name: Switch to dark mode
+        icon: material/brightness-6
+        name: 暗黑模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
       accent: indigo
       toggle:
-        icon: material/brightness-6
-        name: Switch to dark mode
+        icon: material/brightness-4
+        name: 明亮模式
 
   favicon: assets/favicon.png
   icon:
@@ -59,10 +59,6 @@ plugins:
       enabled: true
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  - enumerate-headings:
-      toc_depth: 4
-      strict: true
-      increment_across_pages: true
 
 extra:
   status:
@@ -126,13 +122,34 @@ markdown_extensions:
   - pymdownx.tilde
 
 nav:
-  - 入门: 
-    - 安装: index.md
+  - 入门:
+    - 安装: getting-started/installation.md
     - 新建网站: getting-started/create-your-site.md
     - 发布网站: getting-started/public-your-site.md
     - 自定义: getting-started/customization.md
+    - 约定: getting-started/conventions.md
+    - 浏览器支持: getting-started/browser-support.md
+    - 企业反馈: getting-started/enterprise-support.md
+    - 哲学: getting-started/philosophy.md
+    - 备选方案: getting-started/alternatives.md
+    - 许可: getting-started/license.md
+    - 教程:
+        - tutorials/index.md
+        - "博客":
+            - 基础: tutorials/blogs/basic.md
+            - 导航: tutorials/blogs/navigation.md
+            - 参与和内容传播: tutorials/blogs/engage.md
+        - "社交卡片":
+            - tutorials/social/basic.md
+            - tutorials/social/custom.md
+    - "更改日志":
+        - changelog/index.md
+        - 升级: upgrade.md
 
   - 设置:
+    - setup/index.md
+    - 更改颜色: setup/changing-the-colors.md
+    - 更改字体: setup/changing-the-fonts.md
     - 扩展:
         - enumerate-headings-plugin: setup/extensions/mkdocs-enumerate-headings-plugin.md
         - toggle-sidebar-plugin: setup/extensions/mkdocs-toggle-sidebar-plugin.md

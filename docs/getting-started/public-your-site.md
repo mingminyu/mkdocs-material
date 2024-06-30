@@ -1,10 +1,4 @@
----
-title: 发布网站
-tags:
-    - Github Pages
-    - Gitlab Pages
----
-
+# 发布网站
 
 将网站托管在 Git 库中的最大好处是能够在推送更改时能自动部署它，MkDocs使得这一操作更加简单。
 
