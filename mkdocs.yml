@@ -123,7 +123,7 @@ markdown_extensions:
 
 nav:
   - 入门:
-    - 安装: getting-started/installation.md
+    - 安装: index.md
     - 新建网站: getting-started/create-your-site.md
     - 发布网站: getting-started/public-your-site.md
     - 自定义: getting-started/customization.md
