@@ -23,6 +23,7 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.indexes
+    - navigation.sections
     - navigation.tracking
     - search.highlight
     - search.share
@@ -167,24 +168,58 @@ nav:
     - 站点优化: setup/building-an-optimized-site.md
     - 离线使用: setup/building-for-offline-usage.md
     - 扩展:
-        - enumerate-headings-plugin: setup/extensions/mkdocs-enumerate-headings-plugin.md
-        - toggle-sidebar-plugin: setup/extensions/mkdocs-toggle-sidebar-plugin.md
-        - git-revision-date-localized: https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
+        - enumerate-headings: setup/extensions/mkdocs-enumerate-headings-plugin.md
+        - toggle-sidebar: setup/extensions/mkdocs-toggle-sidebar-plugin.md
+        - git-revision-date-localized: setup/extensions/mkdocs-git-revision-date-localized-plugin.md
 
   - 插件:
     - plugins/index.md
-    - 博客: plugins/blog.md
-    - 分组: plugins/group.md
-    - 信息: plugins/info.md
-    - Meta: plugins/meta.md
-    - 离线: plugins/offline.md
-    - 优化: plugins/optimize.md
-    - 隐私: plugins/privacy.md
-    - 项目: plugins/projects.md
-    - 搜索: plugins/search.md
-    - 社交: plugins/social.md
-    - 标签: plugins/tags.md
-    - Typeset: plugins/typeset.md
+    - 博客插件: plugins/blog.md
+    - 分组插件: plugins/group.md
+    - 信息插件: plugins/info.md
+    - 元数据插件: plugins/meta.md
+    - 离线插件: plugins/offline.md
+    - 优化插件: plugins/optimize.md
+    - 隐私插件: plugins/privacy.md
+    - 项目插件: plugins/projects.md
+    - 搜索插件: plugins/search.md
+    - 社交插件: plugins/social.md
+    - 标签插件: plugins/tags.md
+    - 排版插件: plugins/typeset.md
     - 要求:
       - 图片处理: plugins/requirements/image-processing.md
       - 缓存: plugins/requirements/caching.md
+
+  - 参考:
+    - reference/index.md
+    - 警告: reference/admonitions.md
+    - 注解: reference/annotations.md
+    - 按钮: reference/buttons.md
+    - 代码块: reference/code-blocks.md
+    - 内容标签: reference/content-tabs.md
+    - 数据表: reference/data-tables.md
+    - 图表: reference/diagrams.md
+    - 脚注: reference/footnotes.md
+    - 格式化: reference/formatting.md
+    - 网格: reference/grids.md
+    - 图标与表情: reference/icons-emojis.md
+    - 图片: reference/images.md
+    - 列表: reference/lists.md
+    - 数学公式: reference/math.md
+    - 提示: reference/tooltips.md
+
+  - 社区:
+    - 贡献:
+      - contributing/index.md
+      - 报告错误: contributing/reporting-bugs.md
+      - 报告文档问题: contributing/reporting-docs-issues.md
+      - 请求变更: contributing/requesting-changes.md
+      - 添加翻译: contributing/adding-translations.md
+      - 拉取请求: contributing/making-pull-requests.md
+      - 询问问题: https://github.com/squidfunk/mkdocs-material/discussions
+    - 指南:
+      - 创建复制品: guides/creating-a-reproduction.md
+    - 社区专家计划:
+      - insiders/community-experts-program/index.md
+  - 博客:
+    - blog/index.md
