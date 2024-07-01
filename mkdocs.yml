@@ -150,7 +150,41 @@ nav:
     - setup/index.md
     - 更改颜色: setup/changing-the-colors.md
     - 更改字体: setup/changing-the-fonts.md
+    - 更改语言: setup/changing-the-language.md
+    - 更改 LOGO 和图标: setup/changing-the-logo-and-icons.md
+    - 确保数据隐私: setup/ensuring-data-privacy.md
+    - 设置导航: setup/setting-up-navigation.md
+    - 设置网站搜索: setup/setting-up-site-search.md
+    - 设置站点分析: setup/setting-up-site-analytics.md
+    - 设置社交卡片: setup/setting-up-social-cards.md
+    - 搭建博客: setup/setting-up-a-blog.md
+    - 设置标签: setup/setting-up-tags.md
+    - 设置版本: setup/setting-up-versioning.md
+    - 设置页眉: setup/setting-up-the-header.md
+    - 设置页脚: setup/setting-up-the-footer.md
+    - 添加 Git 仓库: setup/adding-a-git-repository.md
+    - 添加评论系统: setup/adding-a-comment-system.md
+    - 站点优化: setup/building-an-optimized-site.md
+    - 离线使用: setup/building-for-offline-usage.md
     - 扩展:
         - enumerate-headings-plugin: setup/extensions/mkdocs-enumerate-headings-plugin.md
         - toggle-sidebar-plugin: setup/extensions/mkdocs-toggle-sidebar-plugin.md
-  
+        - git-revision-date-localized: https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
+
+  - 插件:
+    - plugins/index.md
+    - 博客: plugins/blog.md
+    - 分组: plugins/group.md
+    - 信息: plugins/info.md
+    - Meta: plugins/meta.md
+    - 离线: plugins/offline.md
+    - 优化: plugins/optimize.md
+    - 隐私: plugins/privacy.md
+    - 项目: plugins/projects.md
+    - 搜索: plugins/search.md
+    - 社交: plugins/social.md
+    - 标签: plugins/tags.md
+    - Typeset: plugins/typeset.md
+    - 要求:
+      - 图片处理: plugins/requirements/image-processing.md
+      - 缓存: plugins/requirements/caching.md

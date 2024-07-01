@@ -10,7 +10,7 @@
 ### 使用 Github Actions
 
 使用 GitHub Actions 可以自动部署网站，我们需要在库的根目录下新建一个 GitHub Actions Workflow，例如 `.github/workflows/ci.yml`，并粘贴入以下内容：
-
+ 
 === "Material for MkDocs"
 
     ```yaml linenums="1"
