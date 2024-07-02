@@ -163,8 +163,8 @@ nav:
     - 设置版本: setup/setting-up-versioning.md
     - 设置页眉: setup/setting-up-the-header.md
     - 设置页脚: setup/setting-up-the-footer.md
-    - 添加 Git 仓库: setup/adding-a-git-repository.md
-    - 添加评论系统: setup/adding-a-comment-system.md
+    - 添加 Git 仓库: setup/adding-git-repository.md
+    - 添加评论系统: setup/adding-comment-system.md
     - 站点优化: setup/building-an-optimized-site.md
     - 离线使用: setup/building-for-offline-usage.md
     - 扩展:
@@ -208,6 +208,26 @@ nav:
     - 数学公式: reference/math.md
     - 提示: reference/tooltips.md
 
+  - 内部版本:
+    - insiders/index.md
+    - 为什么赞助我们: insiders/why-sponsor-us.md
+    - 权益: insiders/benefits.md
+    - 赞助者: insiders/our-sponsors.md
+    - 赞助等级: insiders/sponsoring-tiers.md
+    - 如何赞助: insiders/how-to-sponsor.md
+    - 额外信息:
+      - 支付和计费: insiders/payment-and-billing.md
+      - 访问管理: insiders/access-management.md
+      - 运行和取消: insiders/runtime-and-cancellation.md
+      - 隐私: insiders/privacy.md
+      - 许可: insiders/license.md
+      - 支持: insiders/support.md
+    - 使用内部版本:
+      - 快速入门: insiders/getting-started.md
+    - 更改日志:
+      - insiders/changelog/index.md
+      - 升级: insiders/upgrade.md
+
   - 社区:
     - 贡献:
       - contributing/index.md
@@ -218,7 +238,7 @@ nav:
       - 拉取请求: contributing/making-pull-requests.md
       - 询问问题: https://github.com/squidfunk/mkdocs-material/discussions
     - 指南:
-      - 创建复制品: guides/creating-a-reproduction.md
+      - 创建复制品: guides/creating-reproduction.md
     - 社区专家计划:
       - insiders/community-experts-program/index.md
   - 博客:
