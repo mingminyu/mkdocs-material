@@ -36,7 +36,7 @@ theme:
       primary: indigo
       accent: indigo
       toggle:
-        icon: material/brightness-6
+        icon: material/brightness-7
         name: 暗黑模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -53,9 +53,7 @@ theme:
   language: zh
 
 plugins:
-  - tags
   - blog
-  # - toggle-sidebar
   - tags:
       enabled: true
   - search:
