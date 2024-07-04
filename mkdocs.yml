@@ -59,7 +59,9 @@ plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 
+
 extra:
+  generator: false
   status:
     new: Recently added
     deprecated: Deprecated
