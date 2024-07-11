@@ -2,12 +2,12 @@
 
 将网站托管在 Git 库中的最大好处是能够在推送更改时能自动部署它，MkDocs使得这一操作更加简单。
 
-## Github Pages :material-github:
+## 1. Github Pages :material-github:
 
 如果已经在 GitHub 上托管代码，那么使用 GitHub Pages 来发布网站那是再方便不过了。
 
 
-### 使用 Github Actions
+### 1.1 使用 Github Actions
 
 使用 GitHub Actions 可以自动部署网站，我们需要在库的根目录下新建一个 GitHub Actions Workflow，例如 `.github/workflows/ci.yml`，并粘贴入以下内容：
  
@@ -105,7 +105,7 @@
 
 现在，当新的更改被提交到 `master` 或者 `main` 分支后，静态网站将自动构建和部署，我们可以在仓库中的 Actions 查看具体 Workflow 运行情况和日志。
 
-### 使用 MkDocs
+### 1.2 使用 MkDocs
 
 如果你更喜欢手动部署项目，你可以在根目录下执行以下命令:
 
@@ -113,11 +113,23 @@
 mkdocs gh-deploy --force
 ```
 
+执行上述操作后 Github 会编译文档并将它部署到 `gh-pages` 分支上。查看 [MkDocs 总览](https://www.mkdocs.org/user-guide/deploying-your-docs/#project-pages) 来获取更多信息，如果想要查看命令行参数，可以查阅[命令行](https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy)文档。
+
 !!! warning "注意"
-    执行上述操作后 Github 会编译文档并将它部署到 `gh-pages` 分支上。查看 [MkDocs 总览](https://www.mkdocs.org/user-guide/deploying-your-docs/#project-pages) 来获取更多信息，如果想要查看命令行参数，可以查阅[命令行](https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy)文档。
+    
+    这里我们还差一步，我们需要项目仓库的 Settings --> Pages 进行如下设置：
+    
+      1. Build and deployment --> Deploy from a branch
+      2. Brach => gh-pages
+      3. Custm domain --> 你的域名
 
 
-## Github Pages :material-gitlab:
+### 1.3 使用自定义域名
+
+如果你想使用自己的域名，那么需要
+
+
+## 2. Github Pages :material-gitlab:
 
 如果你是将代码托管在 GitLab 上，那么也可以使用 GitLab CI 来部署 GitLab Pages。在仓库的根目录中，创建一个名为 `.gitlab-ci.yml` 文件，然后添加以下内容：
 
@@ -159,7 +171,7 @@ mkdocs gh-deploy --force
 
 我们的网站访问入口为 `<username>.gitlab.io/<repository>`。
 
-## 其他
+## 3. 其他
 
 
 由于我们无法覆盖所有可能的平台，我们依赖社区贡献的指南来介绍如何将 Material for MkDocs 构建的网站部署到
