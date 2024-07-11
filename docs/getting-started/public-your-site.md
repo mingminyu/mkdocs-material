@@ -126,12 +126,15 @@ mkdocs gh-deploy --force
 
 ### 1.3 使用自定义域名
 
-如果你想使用自己的域名，那么需要在 `docs` 文件下添加一个 CNAME 文件，并填充域名信息，示例如下:
+如果你想使用自己的域名，那么需要在 `docs` 文件下添加一个 CNAME 文件，并添加域名信息，示例如下:
 
 ```python title="CNAME"
 www.zerooai.cn
 ```
 
+!!! warning "如果没添加 CNAME 文件"
+
+    如果你没有添加 CNAME 文件的话，那么每次提交都需要手动去 Pages 里面设置自定义域名。
 
 ## 2. Github Pages :material-gitlab:
 
